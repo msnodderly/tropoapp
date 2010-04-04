@@ -13,6 +13,8 @@ require "tropo-transcriptions"
 
 use Rack::Session::Cookie, :secret => 'ok,, this is mTy sEcret phrASe tHa4 no0wn wille ver gu3ss-===r'
 
+#enable :sessions
+use Rack::Flash
 
 get '/' do
 
@@ -22,10 +24,10 @@ end
 
 get '/protected' do
 login_required
- flash[:notice] = "Thanks for signing in!"
+flash[:notice] = "Thanks for signing in!"
 
      # Get a flash entry
-     flash[:notice] # => "Thanks for signing up!"
+flash[:notice] # => "Thanks for signing up!"
 #
 
 "hi #{current_user.email}"
