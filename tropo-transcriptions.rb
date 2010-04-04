@@ -10,6 +10,7 @@ require 'dm-core'
 
 
 get '/transcriptions' do
+  login_required
   # Just list all the shouts
   @transcriptions = VoxeoTranscription.all
 
@@ -17,13 +18,15 @@ get '/transcriptions' do
 end
 
 get '/transcription' do
+  login_required
   # Just list all the shouts
   @transcription = VoxeoTranscription.first(:guid => params[:guid])
   erb :single
 end
 
 
-post '/receive_transcription' do
+# obscure post url a little
+post '/receive_transcription654' do
   begin 
     result = Crack::XML.parse env['rack.request.form_hash'].to_s
   rescue 
