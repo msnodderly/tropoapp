@@ -40,6 +40,3 @@ class DmUser
     return false
   end
 end
-
-DataMapper.auto_upgrade!
-

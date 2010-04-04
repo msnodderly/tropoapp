@@ -1,12 +1,6 @@
 require 'sinatra/base'
-require 'rack-flash'
-
 require 'pathname'
 require Pathname(__FILE__).dirname.expand_path + "models/abstract_user"
-
-
-use Rack::Session::Cookie
-use Rack::Flash
 
 module Sinatra
   module LilAuthentication
@@ -21,11 +15,7 @@ module Sinatra
 
       get '/users' do
         login_required
-#        if not current_user.admin? then
-#                flash[:notice] = "sorry, not allowed"
-#                redirect "/" 
-#        end
-                flash[:notice] = "hello there!"
+        redirect "/" unless current_user.admin?
 
         @users = User.all
         if @users != []
