@@ -10,6 +10,7 @@ require 'dm-core'
 
 
 get '/transcriptions' do
+ login_required
   # Just list all the shouts
   @transcriptions = VoxeoTranscription.all
 
@@ -17,6 +18,7 @@ get '/transcriptions' do
 end
 
 get '/transcription' do
+  login_required
   # Just list all the shouts
   @transcription = VoxeoTranscription.first(:guid => params[:guid])
   erb :single
