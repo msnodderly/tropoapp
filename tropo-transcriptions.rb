@@ -9,19 +9,6 @@ require 'dm-core'
 
 
 
-# Create your model class
-class VoxeoTranscription
-  include DataMapper::Resource
-  
-  property :id, Serial
-  property :guid, String
-  property :identifier, String
-  property :message, Text
-end
-
-DataMapper.auto_upgrade!
-
-
 get '/transcriptions' do
   # Just list all the shouts
   @transcriptions = VoxeoTranscription.all

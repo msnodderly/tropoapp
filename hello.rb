@@ -14,7 +14,7 @@ use Rack::Session::Cookie, :secret => 'ok,, this is mTy sEcret phrASe tHa4 no0wn
 
 
 # Configure DataMapper 
-DataMapper.setup(:default, ENV['DATABASE_URL'] ||  "sqlite3://#{Dir.pwd}/driver.sqlite3")
+#DataMapper.setup(:default, ENV['DATABASE_URL'] ||  "sqlite3://#{Dir.pwd}/driver.sqlite3")
 
 
 
