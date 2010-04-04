@@ -10,10 +10,7 @@ require "tropo-transcriptions"
 
 
 
-
-# Configure DataMapper 
-#DataMapper.setup(:default, ENV['DATABASE_URL'] ||  "sqlite3://#{Dir.pwd}/driver.sqlite3")
-
+use Rack::Session::Cookie, :secret => 'ok,, this is mTy sEcret phrASe tHa4 no0wn wille ver gu3ss-===r'
 
 
 get '/' do
