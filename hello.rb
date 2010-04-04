@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'crack'
+require 'rack-flash'
 
 require "digest/sha1"
 require 'model'
@@ -21,6 +22,11 @@ end
 
 get '/protected' do
 login_required
+ flash[:notice] = "Thanks for signing in!"
+
+     # Get a flash entry
+     flash[:notice] # => "Thanks for signing up!"
+#
 
 "hi #{current_user.email}"
 

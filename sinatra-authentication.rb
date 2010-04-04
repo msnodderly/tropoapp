@@ -62,7 +62,7 @@ module Sinatra
 
       get '/logout' do
         session[:user] = nil
-        @message = "in case it weren't obvious, you've logged out"
+        @message = "logged out"
         redirect '/'
       end
 
